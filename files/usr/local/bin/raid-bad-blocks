@@ -13,7 +13,7 @@ else
     exit 1
 fi
 
-mailaddr=`grep "^MAILADDR" "$mdadm_conf" | grep -Po '[^\s]+$'`
+mailaddr=$(grep "^MAILADDR" "$mdadm_conf" | grep -Po '[^\s]+$')
 [ -z "$mailaddr" ] && mailaddr=root
 
 active_list=$(grep "^md.*: active" /proc/mdstat | cut -f 1 -d ' ')
